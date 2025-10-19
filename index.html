@@ -6,11 +6,11 @@
     <title>وعيك يهمنا</title>
     
     <style>
-        /* التنسيقات العامة */
+        /* التنسيقات الجديدة والجمالية */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff; 
-            color: #333;
+            font-family: 'Tajawal', sans-serif; /* يفضل استخدام خط عربي عصري إذا أمكن */
+            background-color: #f4f7f6; /* خلفية فاتحة وناعمة */
+            color: #2c3e50; /* لون نص داكن مريح */
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -20,51 +20,34 @@
             text-align: center;
         }
 
-        /* رأس الصفحة - يتناسق مع شعار جامعة إربد الأهلية */
         header {
             width: 100%;
-            padding: 15px 0;
-            background-color: #004d99;
+            padding: 25px 0;
+            background-color: #1abc9c; /* لون أخضر بحري جذاب */
             color: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .header-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            width: 80px; 
-            height: auto;
-            border-radius: 50%;
-            border: 4px solid #ff9900; 
-            background-color: white;
-            padding: 5px;
-            object-fit: contain;
-        }
-        
         .qr-wrapper {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            padding: 50px 30px;
             background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(44, 62, 80, 0.1); /* ظل أعمق */
             margin: 30px;
+            max-width: 450px;
+            width: 90%;
         }
 
         h1 {
-            color: #004d99;
+            color: #34495e; /* أزرق رمادي داكن */
             margin-bottom: 30px;
-            font-size: 26px;
+            font-size: 28px;
+            line-height: 1.4;
         }
 
         /* تصميم مكان ظهور الـ QR Code */
@@ -72,9 +55,9 @@
             width: 256px;
             height: 256px;
             margin: 20px auto;
-            border: 6px solid #ff9900; 
-            border-radius: 8px;
-            padding: 10px;
+            border: 8px solid #3498db; /* إطار أزرق سماوي */
+            border-radius: 10px;
+            padding: 5px;
             background-color: #fff;
             display: block; 
         }
@@ -82,30 +65,26 @@
         footer {
             width: 100%;
             padding: 15px 0;
-            background-color: #343a40;
-            color: #f8f9fa;
+            background-color: #34495e; /* لون داكن للتذييل */
+            color: #ecf0f1;
             font-size: 14px;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
     
     <header>
-        <div class="header-content">
-            <img src="inu_logo.jpg" alt="شعار جامعة إربد الأهلية" class="logo">
-            <h2>مبادرة توعوية بالتعاون مع جامعة إربد الأهلية</h2>
-        </div>
+        <h1>وعيك يهمنا: مبادرة للتفكير في القضايا المجتمعية</h1>
     </header>
 
     <div class="qr-wrapper">
-        <h1>امسح هذا الرمز للوصول إلى تحدي الأسئلة: وعيك يهمنا</h1>
+        <h1>امسح هذا الرمز للمشاركة في تحدي الوعي</h1>
         
         <img id="qrcode-img" 
              src="https://chart.googleapis.com/chart?chs=256x256&cht=qr&choe=UTF-8&chl=https://qaes26.github.io/my-event/questions.html"
              alt="رمز QR Code لتحدي الأسئلة">
 
-        <p style="color: #dc3545; font-weight: bold;">لتجربة التحدي، قم بمسح هذا الرمز الآن!</p>
+        <p style="color: #e74c3c; font-weight: bold; margin-top: 25px;">امسح الآن للانتقال إلى الأسئلة!</p>
     </div>
 
     <footer>

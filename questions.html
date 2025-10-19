@@ -4,7 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تحدي الوعي المجتمعي - وعيك يهمنا</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #ecf0f1; 
+            color: #34495e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            direction: rtl; 
+            text-align: right;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 90%;
+            margin: 40px auto;
+            text-align: center;
+            border-top: 5px solid #1abc9c;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px #e67e22;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 2px #e67e22;
+        }
+
+        #nextQuestionButton {
+            background-color: #3498db;
+            box-shadow: 0 4px #2980b9;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+
+        .question-container {
+            margin-top: 30px;
+            padding: 25px;
+            border: 2px dashed #bdc3c7;
+            border-radius: 10px;
+            background-color: #ecf0f1;
+            text-align: right;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .question-container h2 {
+            color: #e74c3c;
+            margin-top: 0;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 10px;
+        }
+
+        .question-text {
+            font-size: 22px;
+            line-height: 1.8;
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        footer {
+            width: 100%;
+            padding: 15px 0;
+            background-color: #34495e;
+            color: #ecf0f1;
+            font-size: 14px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">

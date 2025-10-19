@@ -1,0 +1,94 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    direction: rtl; /* لدعم اللغة العربية */
+    text-align: right;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #007bff;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.qr-code-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #e9f7ff;
+    border-radius: 8px;
+}
+
+#qrCodeImage {
+    max-width: 150px;
+    height: auto;
+    border: 5px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#startButton {
+    background-color: #ffc107;
+    color: #333;
+    font-size: 18px;
+    padding: 12px 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#startButton:hover {
+    background-color: #e0a800;
+}
+
+.question-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    background-color: #fff8e1;
+    text-align: right;
+}
+
+.question-container h2 {
+    color: #dc3545;
+    margin-top: 0;
+}
+
+#randomQuestion {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 500;
+}

@@ -6,6 +6,7 @@
     <title>وعيك يهمنا</title>
     
     <style>
+        /* استيراد خط عربي جميل */
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
         
         body {
@@ -24,24 +25,24 @@
 
         .qr-wrapper {
             background-color: #ffffff;
-            padding: 40px; /* تقليل الحشو قليلاً */
+            padding: 40px;
             border-radius: 15px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
             max-width: 450px;
             width: 90%;
             margin: 50px auto;
             text-align: center;
-            border-left: 8px solid #00aaff;
+            border-left: 8px solid #00aaff; /* خط جانبي أزرق فاتح */
             transition: all 0.3s ease;
         }
 
         /* تنسيق الشعار الصغير في الأعلى */
         .header-logo {
-            width: 80px; /* حجم صغير للشعار */
+            width: 80px; 
             height: auto;
-            margin-bottom: 20px; /* مسافة أسفل الشعار */
-            border: 2px solid #00aaff; /* إطار أزرق فاتح */
-            border-radius: 50%; /* لجعل الإطار دائرياً */
+            margin-bottom: 10px; /* تقليل المسافة أسفل الشعار */
+            border: 2px solid #00aaff;
+            border-radius: 50%;
             padding: 5px;
             background-color: #ffffff;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -49,7 +50,7 @@
 
         /* تنسيق اسم الطالب (في الأعلى) */
         .creator-header {
-            color: #ff8c00;
+            color: #ff8c00; /* برتقالي ساطع */
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 25px;
@@ -72,10 +73,10 @@
 
         /* تنسيق الـ QR Code (ليكون بارزاً في المنتصف) */
         #qrcode-img {
-            width: 280px; /* حجم أكبر قليلاً للـ QR */
+            width: 280px;
             height: 280px;
-            margin: 30px auto; /* مسافة أكبر أعلى وأسفل الـ QR */
-            border: 6px solid #ff8c00;
+            margin: 30px auto;
+            border: 6px solid #ff8c00; /* إطار برتقالي جذاب */
             border-radius: 12px;
             padding: 5px;
             background-color: #fff;
@@ -99,6 +100,7 @@
 <body>
     
     <div class="qr-wrapper">
+        
         <img src="inu_logo.jpg" alt="شعار جامعة إربد الأهلية" class="header-logo">
 
         <div class="creator-header">
@@ -117,12 +119,21 @@
         const targetURL = 'https://qaes26.github.io/my-event/questions.html'; 
         
         const timestamp = new Date().getTime(); 
+        // استخدام رابط Google Charts لإنشاء الـ QR Code
         const qrCodeSource = `https://chart.googleapis.com/chart?chs=280x280&cht=qr&choe=UTF-8&chl=${encodeURIComponent(targetURL)}&v=${timestamp}`;
         
-        // جلب عنصر الـ QR Code وتحديد مصدره
-        document.getElementById('qrcode-img').src = qrCodeSource;
-        
-        // تم إزالة منطق onerror لأن المشاكل التقنية حُلت
+        const qrCodeImg = document.getElementById('qrcode-img');
+        qrCodeImg.src = qrCodeSource;
+
+        // منطق احتياطي: في حال فشل تحميل الـ QR Code، نعرض الشعار بدلاً من الأيقونة المكسورة
+        qrCodeImg.onerror = function() {
+            console.error("Failed to load QR code image. Displaying default logo.");
+            qrCodeImg.src = 'inu_logo.jpg'; 
+            qrCodeImg.alt = 'شعار جامعة إربد الأهلية - فشل تحميل رمز QR';
+            qrCodeImg.style.borderColor = '#e63946';
+            qrCodeImg.style.width = '280px'; 
+            qrCodeImg.style.height = 'auto'; 
+        };
     </script>
     
 </body>

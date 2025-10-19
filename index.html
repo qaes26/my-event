@@ -6,90 +6,67 @@
     <title>وعيك يهمنا</title>
     
     <style>
-        /* التنسيقات الجديدة والجمالية */
+        /* تصميم بسيط ومضمون */
         body {
-            font-family: 'Tajawal', sans-serif; /* يفضل استخدام خط عربي عصري إذا أمكن */
-            background-color: #f4f7f6; /* خلفية فاتحة وناعمة */
-            color: #2c3e50; /* لون نص داكن مريح */
+            font-family: 'Arial', sans-serif;
+            background-color: #e6eefc; /* لون خلفية هادئ */
+            color: #333;
             margin: 0;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             min-height: 100vh;
             text-align: center;
         }
 
-        header {
-            width: 100%;
-            padding: 25px 0;
-            background-color: #1abc9c; /* لون أخضر بحري جذاب */
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
         .qr-wrapper {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 50px 30px;
             background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(44, 62, 80, 0.1); /* ظل أعمق */
-            margin: 30px;
-            max-width: 450px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
             width: 90%;
+            margin: 20px;
+            border-top: 5px solid #007bff; /* خط أزرق للتمييز */
         }
 
         h1 {
-            color: #34495e; /* أزرق رمادي داكن */
+            color: #007bff;
             margin-bottom: 30px;
-            font-size: 28px;
-            line-height: 1.4;
+            font-size: 24px;
         }
 
-        /* تصميم مكان ظهور الـ QR Code */
+        /* تصميم الـ QR Code (الصورة) */
         #qrcode-img {
             width: 256px;
             height: 256px;
             margin: 20px auto;
-            border: 8px solid #3498db; /* إطار أزرق سماوي */
-            border-radius: 10px;
+            border: 5px solid #28a745; /* إطار أخضر مميز */
+            border-radius: 5px;
             padding: 5px;
             background-color: #fff;
             display: block; 
         }
 
-        footer {
-            width: 100%;
-            padding: 15px 0;
-            background-color: #34495e; /* لون داكن للتذييل */
-            color: #ecf0f1;
-            font-size: 14px;
+        p {
+            color: #555;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
     
-    <header>
-        <h1>وعيك يهمنا: مبادرة للتفكير في القضايا المجتمعية</h1>
-    </header>
-
     <div class="qr-wrapper">
-        <h1>امسح هذا الرمز للمشاركة في تحدي الوعي</h1>
+        <h1>وعيك يهمنا</h1>
+        <p>امسح هذا الرمز للانتقال إلى تحدي الأسئلة</p>
         
         <img id="qrcode-img" 
              src="https://chart.googleapis.com/chart?chs=256x256&cht=qr&choe=UTF-8&chl=https://qaes26.github.io/my-event/questions.html"
              alt="رمز QR Code لتحدي الأسئلة">
 
-        <p style="color: #e74c3c; font-weight: bold; margin-top: 25px;">امسح الآن للانتقال إلى الأسئلة!</p>
+        <p style="color: #dc3545; font-weight: bold; margin-top: 20px;">امسح الآن!</p>
     </div>
-
-    <footer>
-        من عمل الطالب **قيس طلال الجازي**
-    </footer>
 
 </body>
 </html>

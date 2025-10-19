@@ -6,12 +6,11 @@
     <title>تحدي الوعي المجتمعي - وعيك يهمنا</title>
     
     <style>
-        /* جلب خط خارجي لتحسين جمالية النص العربي */
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
 
         body {
-            font-family: 'Tajawal', sans-serif; /* استخدام خط Tajawal الجميل */
-            background-color: #f7f9fb; /* خلفية فاتحة جداً */
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f7f9fb;
             color: #2c3e50;
             margin: 0;
             padding: 0;
@@ -26,14 +25,14 @@
 
         .container {
             background-color: #ffffff;
-            padding: 50px; /* زيادة الحشو قليلاً */
-            border-radius: 15px; /* تدوير أكبر للحواف */
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* ظل أعمق وأوضح */
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
             max-width: 750px;
             width: 90%;
             margin: 60px auto;
             text-align: center;
-            border-top: 8px solid #3498db; /* خط علوي بلون أزرق حديث */
+            border-top: 8px solid #3498db;
         }
 
         h1 {
@@ -71,7 +70,7 @@
         }
         
         #nextQuestionButton {
-            background-color: #1abc9c; /* لون أخضر بحري لـ 'سؤال آخر' */
+            background-color: #1abc9c;
             box-shadow: 0 4px #16a085;
             font-size: 18px;
             padding: 12px 25px;
@@ -86,7 +85,7 @@
         .question-container {
             margin-top: 40px;
             padding: 30px;
-            border: 2px solid #bdc3c7; /* تغيير من داشد إلى سولد */
+            border: 2px solid #bdc3c7;
             border-radius: 12px;
             background-color: #ecf0f1;
             text-align: right;
@@ -94,11 +93,11 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* ظل داخلي خفيف */
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
         }
 
         .question-container h2 {
-            color: #c0392b; /* لون أحمر غامق ومميز */
+            color: #c0392b;
             margin-top: 0;
             border-bottom: 2px solid #bdc3c7;
             padding-bottom: 15px;
@@ -111,31 +110,33 @@
             color: #34495e;
         }
         
-        /* === تنسيق العجلة الدوارة (لتفعيل تأثير العشوائية) === */
+        /* تنسيق العجلة الدوارة (لتفعيل تأثير العشوائية) */
         @keyframes flash {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; } /* جعل الوميض أسرع وأوضح */
+            50% { opacity: 0.3; }
         }
 
         .question-container.spinning .question-text {
             font-size: 26px;
             font-style: italic;
-            color: #e74c3c; /* تغيير لون النص المتذبذب إلى الأحمر */
-            animation: flash 0.08s infinite; /* وميض سريع جداً */
+            color: #e74c3c;
+            animation: flash 0.08s infinite;
         }
-        /* ==================================================== */
 
 
+        /* === التعديل الجمالي الخاص بالتذييل === */
         footer {
             width: 100%;
-            padding: 15px 0;
-            background-color: #2c3e50; /* لون أزرق غامق جداً للتذييل */
+            padding: 18px 0; /* زيادة الحشو الرأسي */
+            background-color: #2c3e50; /* لون أزرق غامق جداً */
             color: #ecf0f1;
-            font-size: 15px;
+            font-size: 16px; /* زيادة حجم الخط */
             text-align: center;
             flex-shrink: 0;
-            border-top: 3px solid #3498db;
+            border-top: 4px solid #3498db; /* خط علوي مميز */
+            font-weight: bold; /* جعل النص أغمق */
         }
+        /* ===================================== */
     </style>
 </head>
 <body>

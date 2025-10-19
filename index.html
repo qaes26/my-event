@@ -82,11 +82,6 @@
             background-color: #fff;
             display: block; 
             object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-        
-        #qrcode-img:hover {
-            transform: scale(1.03);
         }
 
         .scan-prompt {
@@ -110,37 +105,12 @@
         <h1>وعيك يهمنا</h1>
         <p>امسح هذا الرمز للانتقال إلى تحدي الأسئلة</p>
         
-        <img id="qrcode-img" alt="رمز QR Code لتحدي الأسئلة" src="placeholder.png"> 
+        <img id="qrcode-img" 
+             src="https://chart.googleapis.com/chart?chs=280x280&cht=qr&choe=UTF-8&chl=https%3A%2F%2Fqaes26.github.io%2Fmy-event%2Fquestions.html"
+             alt="رمز QR Code لتحدي الأسئلة">
 
         <p class="scan-prompt">امسح الآن!</p>
     </div>
 
-    <script>
-        // دالة يتم استدعاؤها بعد 100 مللي ثانية فقط
-        function loadQrCode() {
-            const targetURL = 'https://qaes26.github.io/my-event/questions.html'; 
-            const timestamp = new Date().getTime(); 
-            // استخدام رابط Google Charts لإنشاء الـ QR Code
-            const qrCodeSource = `https://chart.googleapis.com/chart?chs=280x280&cht=qr&choe=UTF-8&chl=${encodeURIComponent(targetURL)}&v=${timestamp}`;
-            
-            const qrCodeImg = document.getElementById('qrcode-img');
-            
-            // 1. تحديد المصدر لـ QR Code
-            qrCodeImg.src = qrCodeSource;
-
-            // 2. منطق احتياطي: إذا فشل تحميل الـ QR Code، أعد عرض الشعار بحدود حمراء
-            qrCodeImg.onerror = function() {
-                qrCodeImg.src = 'inu_logo.jpg';
-                qrCodeImg.alt = 'شعار جامعة إربد الأهلية - فشل تحميل رمز QR';
-                qrCodeImg.style.borderColor = '#e63946';
-                qrCodeImg.style.width = '280px'; 
-                qrCodeImg.style.height = 'auto'; 
-            };
-        }
-
-        // تأخير استدعاء دالة تحميل الـ QR قليلاً
-        setTimeout(loadQrCode, 100);
-    </script>
-    
-</body>
+    </body>
 </html>

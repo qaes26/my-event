@@ -7,7 +7,7 @@
     
     <style>
         body {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Arial', sans-serif; /* استخدام خط قياسي لضمان التوافق */
             background-color: #ecf0f1; 
             color: #34495e;
             margin: 0;
@@ -30,7 +30,7 @@
             width: 90%;
             margin: 40px auto;
             text-align: center;
-            border-top: 5px solid #1abc9c;
+            border-top: 5px solid #1abc9c; /* أخضر بحري */
         }
 
         h1 {
@@ -40,7 +40,7 @@
         }
 
         button {
-            background-color: #f39c12;
+            background-color: #f39c12; /* برتقالي جذاب */
             color: white;
             border: none;
             padding: 15px 30px;
@@ -59,12 +59,24 @@
             box-shadow: 0 2px #e67e22;
         }
 
+        button:disabled {
+            background-color: #bdc3c7; /* لون عند التعطيل */
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+        
         #nextQuestionButton {
-            background-color: #3498db;
+            background-color: #3498db; /* أزرق سماوي */
             box-shadow: 0 4px #2980b9;
             font-size: 16px;
             padding: 10px 20px;
         }
+        
+        #nextQuestionButton:hover:not(:disabled) {
+            background-color: #2980b9;
+        }
+
 
         .question-container {
             margin-top: 30px;
@@ -92,6 +104,21 @@
             font-weight: 600;
             color: #34495e;
         }
+        
+        /* === تنسيق العجلة الدوارة (لتفعيل تأثير العشوائية) === */
+        @keyframes flash {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .question-container.spinning .question-text {
+            font-size: 24px;
+            font-style: italic;
+            color: #1abc9c;
+            animation: flash 0.1s infinite; /* وميض سريع */
+        }
+        /* ==================================================== */
+
 
         footer {
             width: 100%;

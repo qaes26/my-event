@@ -1,94 +1,84 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Tajawal', sans-serif;
+    background-color: #ecf0f1; /* خلفية بيضاء رمادية فاتحة */
+    color: #34495e;
     margin: 0;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    direction: rtl; /* لدعم اللغة العربية */
+    direction: rtl; 
     text-align: right;
 }
 
 .container {
-    background-color: #fff;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
     width: 100%;
     text-align: center;
+    border-top: 5px solid #1abc9c; /* خط علوي بلون المبادرة */
 }
 
 h1 {
-    color: #007bff;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.qr-code-section {
+    color: #2c3e50;
     margin-bottom: 30px;
-    padding: 15px;
-    background-color: #e9f7ff;
-    border-radius: 8px;
-}
-
-#qrCodeImage {
-    max-width: 150px;
-    height: auto;
-    border: 5px solid #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
+    font-size: 32px;
 }
 
 button {
-    background-color: #28a745;
+    background-color: #f39c12; /* لون برتقالي جذاب لزر البدء */
     color: white;
     border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px #e67e22; /* ظل ثلاثي الأبعاد خفيف */
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #e67e22;
+    transform: translateY(-2px); /* تأثير بسيط عند المرور بالفأرة */
+    box-shadow: 0 2px #e67e22;
 }
 
-#startButton {
-    background-color: #ffc107;
-    color: #333;
-    font-size: 18px;
-    padding: 12px 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
+#nextQuestionButton {
+    background-color: #3498db; /* لون مختلف لزر سؤال آخر */
+    box-shadow: 0 4px #2980b9;
+    font-size: 16px;
+    padding: 10px 20px;
 }
 
-#startButton:hover {
-    background-color: #e0a800;
+#nextQuestionButton:hover {
+    background-color: #2980b9;
 }
 
 .question-container {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px dashed #ccc;
-    border-radius: 8px;
-    background-color: #fff8e1;
+    margin-top: 30px;
+    padding: 25px;
+    border: 2px dashed #bdc3c7;
+    border-radius: 10px;
+    background-color: #ecf0f1;
     text-align: right;
 }
 
 .question-container h2 {
-    color: #dc3545;
+    color: #e74c3c; /* لون أحمر لتسليط الضوء */
     margin-top: 0;
+    border-bottom: 1px solid #bdc3c7;
+    padding-bottom: 10px;
 }
 
-#randomQuestion {
-    font-size: 18px;
-    line-height: 1.6;
-    font-weight: 500;
+.question-text {
+    font-size: 22px;
+    line-height: 1.8;
+    font-weight: 600;
+    color: #34495e;
 }

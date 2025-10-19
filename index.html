@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>وعيك يهمنا</title>
     
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-    
     <style>
         /* تصميم بسيط ومضمون */
         body {
@@ -14,9 +12,10 @@
             background-color: #e6eefc; 
             color: #333;
             margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             min-height: 100vh;
             text-align: center;
@@ -29,7 +28,8 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 90%;
-            margin: 20px;
+            margin-top: 40px;
+            margin-bottom: auto;
             border-top: 5px solid #007bff; 
         }
 
@@ -39,8 +39,8 @@
             font-size: 24px;
         }
 
-        /* تصميم مكان ظهور الـ QR Code */
-        #qrcode {
+        /* تصميم الـ QR Code (الصورة) */
+        #qrcode-img {
             width: 256px;
             height: 256px;
             margin: 20px auto;
@@ -48,12 +48,25 @@
             border-radius: 5px;
             padding: 5px;
             background-color: #fff;
-            /* يجب أن يكون العنصر مرئياً لكي يتمكن الـ JS من الرسم فيه */
+            display: block; 
         }
 
         p {
             color: #555;
             font-size: 16px;
+        }
+        
+        /* === تذييل الموقع (Footer) === */
+        footer {
+            width: 100%;
+            padding: 18px 0; /* حشو أكبر */
+            background-color: #2c3e50; 
+            color: #ecf0f1;
+            font-size: 16px; /* حجم خط أكبر */
+            text-align: center;
+            flex-shrink: 0;
+            border-top: 4px solid #3498db; /* خط علوي مميز */
+            font-weight: bold;
         }
     </style>
 </head>
@@ -63,24 +76,26 @@
         <h1>وعيك يهمنا</h1>
         <p>امسح هذا الرمز للانتقال إلى تحدي الأسئلة</p>
         
-        <div id="qrcode"></div>
+        <img id="qrcode-img" alt="رمز QR Code لتحدي الأسئلة">
 
         <p style="color: #dc3545; font-weight: bold; margin-top: 20px;">امسح الآن!</p>
     </div>
 
     <script>
-        // الرابط المستهدف لصفحة الأسئلة على GitHub Pages (باستخدام رابطك الثابت)
+        // الرابط الثابت لمشروعك على GitHub Pages
         const targetURL = 'https://qaes26.github.io/my-event/questions.html'; 
         
-        // استخدام مكتبة qrcode.js لتوليد الكود
-        new QRCode(document.getElementById("qrcode"), {
-            text: targetURL,
-            width: 256,
-            height: 256,
-            colorDark : "#000000",
-            colorLight : "#ffffff",
-            correctLevel : QRCode.CorrectLevel.H 
-        });
+        // توليد رابط API جوجل مع إضافة توقيت زمني لمنع التخزين المؤقت (Cache)
+        const timestamp = new Date().getTime(); // قيمة عشوائية جديدة في كل مرة
+        const qrCodeSource = `https://chart.googleapis.com/chart?chs=256x256&cht=qr&choe=UTF-8&chl=${encodeURIComponent(targetURL)}&t=${timestamp}`;
+
+        // تحديد مصدر الصورة في HTML
+        document.getElementById('qrcode-img').src = qrCodeSource;
     </script>
+    
+    <footer>
+        من إعداد وتصميم الطالب: **قيس طلال غالب الجازي**
+    </footer>
+
 </body>
 </html>

@@ -15,7 +15,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* لتثبيت الفوتر في الأسفل */
+            justify-content: space-between;
             align-items: center;
             min-height: 100vh;
             text-align: center;
@@ -29,7 +29,7 @@
             max-width: 400px;
             width: 90%;
             margin-top: 40px;
-            margin-bottom: auto; /* يدفع باقي العناصر للأسفل */
+            margin-bottom: auto;
             border-top: 5px solid #007bff; 
         }
 
@@ -41,7 +41,8 @@
 
         /* تصميم الـ QR Code (الصورة) */
         #qrcode-img {
-            width: 256px;
+            /* الأبعاد القياسية للـ QR Code */
+            width: 256px; 
             height: 256px;
             margin: 20px auto;
             border: 5px solid #28a745; 
@@ -49,6 +50,7 @@
             padding: 5px;
             background-color: #fff;
             display: block; 
+            object-fit: contain; /* للتأكد من احتواء الصورة (سواء كانت QR أو شعار) */
         }
 
         p {
@@ -56,17 +58,17 @@
             font-size: 16px;
         }
         
-        /* === تذييل الموقع (Footer) - الآن بظلال قوية واسمك الكامل === */
+        /* === تذييل الموقع (Footer) البارز === */
         footer {
             width: 100%;
-            padding: 20px 0; /* زيادة الحشو */
-            background-color: #2c3e50; /* لون داكن */
-            color: #ffcc00; /* لون النص أصفر ساطع ليكون بارزاً */
+            padding: 20px 0;
+            background-color: #2c3e50; 
+            color: #ffcc00;
             font-size: 18px; 
             text-align: center;
             flex-shrink: 0;
-            border-top: 5px solid #ffcc00; /* خط علوي بلون النص */
-            font-weight: 900; /* أغمق ما يمكن */
+            border-top: 5px solid #ffcc00; 
+            font-weight: 900;
             letter-spacing: 1px;
         }
     </style>
@@ -86,13 +88,27 @@
         // الرابط الثابت لصفحة الأسئلة على GitHub Pages
         const targetURL = 'https://qaes26.github.io/my-event/questions.html'; 
         
-        // توليد رابط API جوجل مع إضافة توقيت زمني لمنع التخزين المؤقت (Cache)
-        const timestamp = new Date().getTime(); // قيمة عشوائية جديدة في كل مرة
-        // استخدام رابط API جوجل لإنشاء الصورة
-        const qrCodeSource = `https://chart.googleapis.com/chart?chs=256x256&cht=qr&choe=UTF-8&chl=${encodeURIComponent(targetURL)}&t=${timestamp}`;
+        // توليد رابط API جوجل مع إضافة توقيت زمني قوي لمنع التخزين المؤقت
+        const timestamp = new Date().getTime(); 
+        const qrCodeSource = `https://chart.googleapis.com/chart?chs=256x256&cht=qr&choe=UTF-8&chl=${encodeURIComponent(targetURL)}&v=${timestamp}`;
+        
+        // جلب عنصر الصورة
+        const qrCodeImg = document.getElementById('qrcode-img');
 
-        // تحديد مصدر الصورة في HTML لإجبار المتصفح على تحميلها
-        document.getElementById('qrcode-img').src = qrCodeSource;
+        // تحديد مصدر الصورة في HTML
+        qrCodeImg.src = qrCodeSource;
+
+        // منطق احتياطي: في حال فشل تحميل صورة الـ QR Code (بسبب شبكة أو API)
+        qrCodeImg.onerror = function() {
+            // إذا فشل التحميل، نعرض صورة جامعة إربد الأهلية كبديل
+            // يجب أن تكون هذه الصورة (inu_logo.jpg) موجودة في نفس مجلد index.html
+            qrCodeImg.src = 'inu_logo.jpg';
+            qrCodeImg.alt = 'شعار جامعة إربد الأهلية - فشل تحميل رمز QR';
+            // تعديل التنسيق ليلائم الشعار
+            qrCodeImg.style.borderColor = '#dc3545'; // إطار أحمر للتنبيه
+            qrCodeImg.style.width = '300px'; 
+            qrCodeImg.style.height = 'auto'; 
+        };
     </script>
     
     <footer>

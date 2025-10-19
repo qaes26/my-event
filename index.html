@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>وعيك يهمنا</title>
     
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    
     <style>
         /* تصميم بسيط ومضمون */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e6eefc; /* لون خلفية هادئ */
+            background-color: #e6eefc; 
             color: #333;
             margin: 0;
             display: flex;
@@ -28,7 +30,7 @@
             max-width: 400px;
             width: 90%;
             margin: 20px;
-            border-top: 5px solid #007bff; /* خط أزرق للتمييز */
+            border-top: 5px solid #007bff; 
         }
 
         h1 {
@@ -37,16 +39,16 @@
             font-size: 24px;
         }
 
-        /* تصميم الـ QR Code (الصورة) */
-        #qrcode-img {
+        /* تصميم مكان ظهور الـ QR Code */
+        #qrcode {
             width: 256px;
             height: 256px;
             margin: 20px auto;
-            border: 5px solid #28a745; /* إطار أخضر مميز */
+            border: 5px solid #28a745; 
             border-radius: 5px;
             padding: 5px;
             background-color: #fff;
-            display: block; 
+            /* يجب أن يكون العنصر مرئياً لكي يتمكن الـ JS من الرسم فيه */
         }
 
         p {
@@ -61,12 +63,24 @@
         <h1>وعيك يهمنا</h1>
         <p>امسح هذا الرمز للانتقال إلى تحدي الأسئلة</p>
         
-        <img id="qrcode-img" 
-             src="https://chart.googleapis.com/chart?chs=256x256&cht=qr&choe=UTF-8&chl=https://qaes26.github.io/my-event/questions.html"
-             alt="رمز QR Code لتحدي الأسئلة">
+        <div id="qrcode"></div>
 
         <p style="color: #dc3545; font-weight: bold; margin-top: 20px;">امسح الآن!</p>
     </div>
 
+    <script>
+        // الرابط المستهدف لصفحة الأسئلة على GitHub Pages (باستخدام رابطك الثابت)
+        const targetURL = 'https://qaes26.github.io/my-event/questions.html'; 
+        
+        // استخدام مكتبة qrcode.js لتوليد الكود
+        new QRCode(document.getElementById("qrcode"), {
+            text: targetURL,
+            width: 256,
+            height: 256,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H 
+        });
+    </script>
 </body>
 </html>

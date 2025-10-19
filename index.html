@@ -6,7 +6,7 @@
     <title>وعيك يهمنا</title>
     
     <style>
-        /* تصميم بسيط ومضمون */
+        /* تصميم أساسي */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #e6eefc; 
@@ -15,7 +15,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-between; /* لتثبيت الفوتر في الأسفل */
             align-items: center;
             min-height: 100vh;
             text-align: center;
@@ -29,7 +29,7 @@
             max-width: 400px;
             width: 90%;
             margin-top: 40px;
-            margin-bottom: auto;
+            margin-bottom: auto; /* يدفع باقي العناصر للأسفل */
             border-top: 5px solid #007bff; 
         }
 
@@ -56,17 +56,18 @@
             font-size: 16px;
         }
         
-        /* === تذييل الموقع (Footer) === */
+        /* === تذييل الموقع (Footer) - الآن بظلال قوية واسمك الكامل === */
         footer {
             width: 100%;
-            padding: 18px 0; /* حشو أكبر */
-            background-color: #2c3e50; 
-            color: #ecf0f1;
-            font-size: 16px; /* حجم خط أكبر */
+            padding: 20px 0; /* زيادة الحشو */
+            background-color: #2c3e50; /* لون داكن */
+            color: #ffcc00; /* لون النص أصفر ساطع ليكون بارزاً */
+            font-size: 18px; 
             text-align: center;
             flex-shrink: 0;
-            border-top: 4px solid #3498db; /* خط علوي مميز */
-            font-weight: bold;
+            border-top: 5px solid #ffcc00; /* خط علوي بلون النص */
+            font-weight: 900; /* أغمق ما يمكن */
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -82,14 +83,15 @@
     </div>
 
     <script>
-        // الرابط الثابت لمشروعك على GitHub Pages
+        // الرابط الثابت لصفحة الأسئلة على GitHub Pages
         const targetURL = 'https://qaes26.github.io/my-event/questions.html'; 
         
         // توليد رابط API جوجل مع إضافة توقيت زمني لمنع التخزين المؤقت (Cache)
         const timestamp = new Date().getTime(); // قيمة عشوائية جديدة في كل مرة
+        // استخدام رابط API جوجل لإنشاء الصورة
         const qrCodeSource = `https://chart.googleapis.com/chart?chs=256x256&cht=qr&choe=UTF-8&chl=${encodeURIComponent(targetURL)}&t=${timestamp}`;
 
-        // تحديد مصدر الصورة في HTML
+        // تحديد مصدر الصورة في HTML لإجبار المتصفح على تحميلها
         document.getElementById('qrcode-img').src = qrCodeSource;
     </script>
     
